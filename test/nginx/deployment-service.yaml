@@ -23,10 +23,11 @@ kind: Service
 metadata:
   name: service-nginx
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nginx
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
+      nodePort: 30007
